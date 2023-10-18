@@ -4,7 +4,6 @@ const difficulty = 100;
 
 //prendo il bottone
 const btnPlay = document.getElementById('play-btn');
-console.log(btnPlay);
 //aggiungo listener
 btnPlay.addEventListener('click', createGrid);
 //funzione on click
@@ -28,6 +27,7 @@ function createSquare(divCont, index){
     divCont.append(square);
     function activeBox (){
         square.classList.add('active');
+        console.log(`cella attivata: ${this.innerHTML}`);
     }
 }
 
