@@ -11,17 +11,19 @@ btnPlay.addEventListener('click', createGrid);
 function createGrid() {
     // prendo il container #playground
     const divPlayground = document.getElementById('playground');
+    divPlayground.innerHTML='';
     for (let i = 0; i < difficulty; i++) {
         // creo singolo quadrato
-        createSquare(divPlayground);
+        createSquare(divPlayground, i);
 
     }
 
 
 }
-function createSquare(divCont){
+function createSquare(divCont, index){
     const square = document.createElement('div');
     square.classList.add('box');
+    square.innerText= index + 1;
     square.addEventListener('click', activeBox)
     divCont.append(square);
     function activeBox (){
